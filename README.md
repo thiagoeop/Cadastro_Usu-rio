@@ -1,4 +1,3 @@
-# Cadastro_Usu-rio
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,17 +10,35 @@
         .gradient-bg {
             background: linear-gradient(135deg, #6e8efb, #a777e3);
         }
+        .service-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 16px 32px rgba(106, 76, 255, 0.15);
+            border-color: #a777e3;
         }
         .animate-pulse {
             animation: pulse 2s infinite;
         }
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            50% { transform: scale(1.07); }
             100% { transform: scale(1); }
+        }
+        .hero-bg {
+            background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+            position: relative;
+        }
+        .hero-overlay {
+            background: rgba(55, 0, 120, 0.55);
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
@@ -50,11 +67,14 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="gradient-bg text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-4 animate-pulse">Manutenção de Computadores Profissional</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Soluções tecnológicas personalizadas para sua empresa ou residência</p>
-            <a href="#register" class="bg-white text-purple-700 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 inline-block">Cadastre-se Agora</a>
+    <section class="hero-bg relative text-white py-20">
+        <div class="hero-overlay"></div>
+        <div class="container mx-auto px-4 text-center hero-content">
+            <h2 class="text-5xl font-extrabold mb-6 animate-pulse drop-shadow-lg">Manutenção de Computadores Profissional</h2>
+            <p class="text-2xl mb-10 max-w-2xl mx-auto drop-shadow">Soluções tecnológicas personalizadas para sua empresa ou residência</p>
+            <a href="#register" class="bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:scale-105 transition duration-300 inline-block text-lg">
+                Cadastre-se Agora
+            </a>
         </div>
     </section>
 
