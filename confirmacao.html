@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Tech - Confirmação de Cadastro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+        }
+        .service-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 16px 32px rgba(106, 76, 255, 0.15);
+            border-color: #a777e3;
+        }
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.07); }
+            100% { transform: scale(1); }
+        }
+        .print-button:hover {
+            background-color: #4338ca;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-laptop-code text-3xl"></i>
+                    <h1 class="text-2xl font-bold">Digital Tech</h1>
+                </div>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-6">
+                        <li><a href="Index_Cadastro_Usuario.html#services" class="hover:text-gray-200 transition">Serviços</a></li>
+                        <li><a href="Index_Cadastro_Usuario.html#register" class="hover:text-gray-200 transition">Cadastro</a></li>
+                        <li><a href="Index_Cadastro_Usuario.html#quote" class="hover:text-gray-200 transition">Orçamento</a></li>
+                        <li><a href="Index_Cadastro_Usuario.html#contact" class="hover:text-gray-200 transition">Contato</a></li>
+                    </ul>
+                </nav>
+                <button class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Confirmation Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="gradient-bg text-white py-6 px-6 text-center">
+                    <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-white mb-4">
+                        <i class="fas fa-check-circle text-green-600 text-4xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold">Cadastro Realizado com Sucesso!</h2>
+                    <p class="text-lg opacity-90 mt-2">Obrigado por escolher a Digital Tech</p>
+                </div>
+                
+                <div class="p-8">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Dados do Cliente</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="clientData">
+                            <!-- Dados do cliente serão inseridos aqui via JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Detalhes da Solicitação</h3>
+                        <div class="grid grid-cols-1 gap-4" id="serviceData">
+                            <!-- Dados do serviço serão inseridos aqui via JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-8">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">Próximos Passos:</h4>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Nossa equipe analisará sua solicitação e entrará em contato em até 24 horas úteis.</li>
+                            <li>Você receberá um e-mail com a confirmação dos dados e um número de protocolo.</li>
+                            <li>Caso necessário, agendaremos uma visita técnica para avaliação presencial.</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button onclick="window.print()" class="print-button bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-indigo-700 transition flex items-center">
+                            <i class="fas fa-print mr-2"></i> Imprimir
+                        </button>
+                        <a href="Index_Cadastro_Usuario.html" class="bg-gray-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-700 transition flex items-center">
+                            <i class="fas fa-home mr-2"></i> Voltar à Página Inicial
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Digital Tech</h3>
+                    <p class="text-gray-400">Soluções em tecnologia e manutenção de computadores com qualidade e garantia.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Links Úteis</h3>
+                    <ul class="space-y-2">
+                        <li><a href="Index_Cadastro_Usuario.html#services" class="text-gray-400 hover:text-white transition">Serviços</a></li>
+                        <li><a href="Index_Cadastro_Usuario.html#register" class="text-gray-400 hover:text-white transition">Cadastro</a></li>
+                        <li><a href="Index_Cadastro_Usuario.html#quote" class="text-gray-400 hover:text-white transition">Orçamento</a></li>
+                        <li><a href="Index_Cadastro_Usuario.html#contact" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contato</h3>
+                    <p class="text-gray-400 mb-2">(11) 1234-5678</p>
+                    <p class="text-gray-400 mb-2">contato@digitaltech.com.br</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Digital Tech. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Função para obter parâmetros da URL
+        function getUrlParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const pairs = queryString.split('&');
+            
+            for (let i = 0; i < pairs.length; i++) {
+                const pair = pairs[i].split('=');
+                params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+            }
+            
+            return params;
+        }
+
+        // Função para recuperar dados do localStorage
+        function getClientData() {
+            const clientData = JSON.parse(localStorage.getItem('clientData')) || {};
+            const serviceData = JSON.parse(localStorage.getItem('serviceData')) || {};
+            
+            return { clientData, serviceData };
+        }
+
+        // Função para exibir os dados do cliente
+        function displayClientData() {
+            const { clientData, serviceData } = getClientData();
+            const clientDataContainer = document.getElementById('clientData');
+            const serviceDataContainer = document.getElementById('serviceData');
+            
+            // Exibir dados do cliente
+            if (Object.keys(clientData).length > 0) {
+                const clientFields = [
+                    { label: 'Nome', key: 'name' },
+                    { label: 'E-mail', key: 'email' },
+                    { label: 'Telefone', key: 'phone' },
+                    { label: 'CPF', key: 'cpf' },
+                    { label: 'Endereço', key: 'address' },
+                    { label: 'Cidade', key: 'city' }
+                ];
+                
+                clientFields.forEach(field => {
+                    if (clientData[field.key]) {
+                        const div = document.createElement('div');
+                        div.innerHTML = `
+                            <p class="text-gray-600 font-medium">${field.label}:</p>
+                            <p class="text-gray-800 text-lg">${clientData[field.key]}</p>
+                        `;
+                        clientDataContainer.appendChild(div);
+                    }
+                });
+            } else {
+                clientDataContainer.innerHTML = '<p class="text-gray-500 italic">Nenhum dado de cliente disponível.</p>';
+            }
+            
+            // Exibir dados do serviço
+            if (Object.keys(serviceData).length > 0) {
+                const serviceFields = [
+                    { label: 'Tipo de Serviço', key: 'serviceType' },
+                    { label: 'Tipo de Equipamento', key: 'equipmentType' },
+                    { label: 'Descrição do Problema', key: 'problemDescription' },
+                    { label: 'Urgência', key: 'urgency' },
+                    { label: 'E-mail de Contato', key: 'clientEmail' }
+                ];
+                
+                serviceFields.forEach(field => {
+                    if (serviceData[field.key]) {
+                        const div = document.createElement('div');
+                        div.innerHTML = `
+                            <div class="mb-2">
+                                <p class="text-gray-600 font-medium">${field.label}:</p>
+                                <p class="text-gray-800">${serviceData[field.key]}</p>
+                            </div>
+                        `;
+                        serviceDataContainer.appendChild(div);
+                    }
+                });
+            } else {
+                serviceDataContainer.innerHTML = '<p class="text-gray-500 italic">Nenhum dado de serviço disponível.</p>';
+            }
+        }
+
+        // Executar quando a página carregar
+        window.addEventListener('DOMContentLoaded', displayClientData);
+    </script>
+</body>
+</html>
