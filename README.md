@@ -364,14 +364,51 @@
         // Form submission handlers
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            showModal('Cadastro realizado!', 'Seu cadastro foi concluído com sucesso. Em breve entraremos em contato.');
-            this.reset();
+            
+            // Coletar dados do formulário
+            const clientData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                cpf: document.getElementById('cpf').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value
+            };
+            
+            // Salvar dados no localStorage
+            localStorage.setItem('clientData', JSON.stringify(clientData));
+            
+            // Mostrar modal e redirecionar após fechar
+            showModal('Cadastro realizado!', 'Seu cadastro foi concluído com sucesso. Redirecionando para a página de confirmação...');
+            
+            // Redirecionar após 2 segundos
+            setTimeout(function() {
+                window.location.href = 'confirmacao.html';
+            }, 2000);
         });
 
         document.getElementById('quoteForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            showModal('Orçamento solicitado!', 'Recebemos sua solicitação de orçamento. Nossa equipe entrará em contato em até 24 horas úteis.');
-            this.reset();
+            
+            // Coletar dados do formulário
+            const serviceData = {
+                serviceType: document.getElementById('serviceType').options[document.getElementById('serviceType').selectedIndex].text,
+                equipmentType: document.getElementById('equipmentType').options[document.getElementById('equipmentType').selectedIndex].text,
+                problemDescription: document.getElementById('problemDescription').value,
+                urgency: document.getElementById('urgency').options[document.getElementById('urgency').selectedIndex].text,
+                clientEmail: document.getElementById('clientEmail').value
+            };
+            
+            // Salvar dados no localStorage
+            localStorage.setItem('serviceData', JSON.stringify(serviceData));
+            
+            // Mostrar modal e redirecionar após fechar
+            showModal('Orçamento solicitado!', 'Recebemos sua solicitação de orçamento. Redirecionando para a página de confirmação...');
+            
+            // Redirecionar após 2 segundos
+            setTimeout(function() {
+                window.location.href = 'confirmacao.html';
+            }, 2000);
         });
 
         document.getElementById('contactForm').addEventListener('submit', function(e) {
