@@ -2,7 +2,11 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#6e8efb">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Digital Tech - Cadastro de Cliente</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -40,6 +44,31 @@
             position: relative;
             z-index: 2;
         }
+        /* Melhorias mobile */
+        html {
+            scroll-behavior: smooth;
+        }
+        input, select, textarea, button {
+            font-size: 1rem;
+        }
+        @media (max-width: 640px) {
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1.1em !important;
+            }
+            .hero-bg {
+                min-height: 320px;
+            }
+            .container {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+            .service-card {
+                padding: 1rem !important;
+            }
+            .rounded-lg {
+                border-radius: 0.75rem !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
@@ -59,10 +88,18 @@
                         <li><a href="#contact" class="hover:text-gray-200 transition">Contato</a></li>
                     </ul>
                 </nav>
-                <button class="md:hidden text-2xl">
+                <button id="mobileMenuBtn" class="md:hidden text-2xl" aria-label="Abrir menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
+            <nav id="mobileMenu" class="md:hidden hidden mt-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg shadow-lg">
+                <ul class="flex flex-col space-y-2 p-4">
+                    <li><a href="#services" class="hover:text-gray-200 transition">Serviços</a></li>
+                    <li><a href="#register" class="hover:text-gray-200 transition">Cadastro</a></li>
+                    <li><a href="#quote" class="hover:text-gray-200 transition">Orçamento</a></li>
+                    <li><a href="#contact" class="hover:text-gray-200 transition">Contato</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -361,6 +398,21 @@
     </div>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Acessibilidade: foco visível para navegação por teclado
+        document.body.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('outline-none', 'focus-visible:ring-2', 'focus-visible:ring-purple-500');
+            }
+        });
         // Form submission handlers
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
